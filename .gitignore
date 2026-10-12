@@ -1,0 +1,6 @@
+Manifest.toml
+*.cov
+*.jl.cov
+coverage/
+.DS_Store
+.zprofile

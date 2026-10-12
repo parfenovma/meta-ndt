@@ -1,0 +1,10 @@
+name = "MetaNDT"
+uuid = "f96cb834-4055-4d36-b75b-6528f613f0db"
+authors = ["MetaNDT contributors"]
+version = "0.1.0"
+
+[deps]
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+
+[compat]
+julia = "1.10"
