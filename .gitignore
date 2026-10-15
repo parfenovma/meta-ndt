@@ -4,3 +4,6 @@ Manifest.toml
 coverage/
 .DS_Store
 .zprofile
+/tmp/
+__pycache__/
+*.py[cod]

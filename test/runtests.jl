@@ -2,6 +2,11 @@ using LinearAlgebra
 using MetaNDT
 using Test
 
+# This backend uses only library dependencies, so the standalone library CI
+# must exercise its physics without requiring the optional Gridap/Gmsh stack.
+include("coated_fem.jl")
+include("coated_pulse.jl")
+
 @testset "noise model" begin
     model = GaussianReceiverNoise(2.5)
     first = sample_noise(model, 31, 3)
@@ -62,3 +67,5 @@ end
     @test result.score_sigma ≈ 0.75 * norm(template)
     @test rms_amplitude(template) ≈ norm(template) / sqrt(3)
 end
+
+include("canonical_experiments.jl")

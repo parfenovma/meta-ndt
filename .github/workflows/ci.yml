@@ -14,7 +14,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        julia-version: ['lts', '1']
+        julia-version: ['1.10', '1']
         os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
       - uses: actions/checkout@v6
@@ -23,3 +23,7 @@ jobs:
           version: ${{ matrix.julia-version }}
       - run: julia --project=. -e 'using Pkg; Pkg.instantiate()'
       - run: julia --project=. test/runtests.jl
+      - name: Verify transient response and numerical refinement
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: julia --project=. test/coated_pulse_validation.jl

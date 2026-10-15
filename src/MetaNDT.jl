@@ -2,6 +2,15 @@ module MetaNDT
 
 using LinearAlgebra
 
+include("sample_geometry.jl")
+include("cylinder_experiment.jl")
+include("lab_examples.jl")
+include("solid_lens.jl")
+include("coated_cylinder.jl")
+include("coated_pulse.jl")
+include("point_observations.jl")
+include("canonical_experiments.jl")
+
 export AbstractDetector,
        AbstractNoiseModel,
        DetectionResult,
