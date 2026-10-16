@@ -2,8 +2,8 @@
 
 # These are numerical experiments, not replications of all cited devices. The
 # membrane is a prestressed axisymmetric membrane reduction, the Helmholtz tube
-# is a passive transmission-line network, and the prism is a causal effective
-# medium. Each result records that distinction. No Pluto or rendering dependency.
+# is a passive transmission-line network. Each result records that distinction.
+# No Pluto or rendering dependency.
 export CanonicalRecord, membrane_model, membrane_response, membrane_record,
        helmholtz_record, helmholtz_modulus, canonical_spatial_record
 

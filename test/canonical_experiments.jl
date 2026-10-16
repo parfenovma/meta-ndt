@@ -36,16 +36,10 @@ end
 end
 
 @testset "Spatial pulses are computed time histories" begin
-    ordinary=canonical_spatial_record(:prism,:ordinary;nx=65,ny=49)
-    negative=canonical_spatial_record(:prism,:negative;nx=65,ny=49)
-    @test all(isfinite,negative.field)
-    @test iszero(negative.field[:,1])
-    @test negative.diagnostics["relative_density_real"]<0
-    @test ordinary.diagnostics["relative_density_real"]>0
-    @test norm(negative.field-ordinary.field)>.1norm(ordinary.field)
     flat=canonical_spatial_record(:cloak,:flat;nx=65,ny=41)
     bump=canonical_spatial_record(:cloak,:bump;nx=65,ny=41)
     @test all(isfinite,bump.field)
     @test count(bump.valid)<count(flat.valid)
     @test bump.diagnostics["max_wave_energy_ratio"]<1.08
+    @test_throws ArgumentError canonical_spatial_record(:unknown,:flat)
 end

@@ -102,8 +102,7 @@ This costs 8 × nodes × time samples bytes; callers choose whether to retain it
 
 `canonical_experiments.jl` owns the tensioned axisymmetric membrane/port
 model and a passive Helmholtz transmission-line network. `canonical_spatial.jl`
-owns positive-tensor acoustic FEM for a ground cloak and causal auxiliary-state
-effective-medium acoustics for a prism. These are explicitly identified model
+owns positive-tensor acoustic FEM for the ground cloak. These are explicitly identified model
 reductions, not geometric replications of all cited metamaterials.
 
 The client prepares immutable result bundles offline. Opening a lesson,
